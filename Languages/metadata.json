@@ -1,0 +1,29 @@
+[
+  {
+    "culture": "en-US",
+    "en_US": "English (United States)",
+    "native": "English (United States)",
+    "contributors": [
+      "nattadasu"
+    ],
+    "isSymlink": false
+  },
+  {
+    "culture": "en-ID",
+    "en_US": "English (Indonesia)",
+    "native": "English (Indonesia)",
+    "contributors": [
+      "nattadasu"
+    ],
+    "isSymlink": true
+  },
+  {
+    "culture": "id-ID",
+    "en_US": "Indonesian",
+    "native": "Bahasa Indonesia",
+    "contributors": [
+      "nattadasu"
+    ],
+    "isSymlink": false
+  }
+]
