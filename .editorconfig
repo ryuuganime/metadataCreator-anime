@@ -1,0 +1,14 @@
+[*]
+charset = utf-8
+end_of_line = lf
+indent_size = 2
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+[**.{ps1,psm1,py}]
+indent_style = tab
+tab_width = 4
+
+
+[**.{ps1,psm1}]
+charset = utf-8-bom
