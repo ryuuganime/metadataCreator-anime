@@ -151,7 +151,10 @@ $Modules | ForEach-Object {
 }
 
 # Run Env Generator before running the rest of the script
-.\Modules\Generate-Env.ps1
+If (-not (Test-Path -Path ".\.env" -ErrorAction SilentlyContinue)) {
+	Write-Host "Generating env.ps1"
+	.\Modules\Generate-Env.ps1
+}
 
 # ==============================================================================
 # RUN THE REST OF THE SCRIPT
@@ -161,4 +164,4 @@ $Modules | ForEach-Object {
 Set-PsEnv
 
 # Grab python, run pip
-Start-Process $PYTHON_PATH -ArgumentList '-m pip install -r requirements.txt' -Wait
+Invoke-Expression -Command "${Env:PYTHON_PATH} -m pip install -r requirements.txt"
