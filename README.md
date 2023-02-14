@@ -17,6 +17,7 @@ Another attempt creating an automation of metadata inserter: Anime. Made hybrid 
 * [Getting Started](#getting-started)
   * [Prerequisites](#prerequisites)
   * [Installation](#installation)
+* [Usage](#usage)
 * [FAQ](#faq)
   * [Why PowerShell?](#why-powershell)
   * [Why hybrid?](#why-hybrid)
@@ -69,11 +70,16 @@ Another attempt creating an automation of metadata inserter: Anime. Made hybrid 
    git clone https://github.com/<your_username>/metadataCreator-anime.git
    ```
 
-3. Run the `setup.ps1` script to install the required PowerShell, Python, and other dependencies automatically.
+3. Run the `setup.ps1` script to install the required PowerShell modules, Python packages, and other binary dependencies automatically.
 
    ```bash
    pwsh ./setup.ps1
    ```
+
+   * Currently supported package managers for automatic install:
+     * Linux: `apx` (Vanilla OS), `apt` (Debian or Ubuntu deriv.), `rpm` (Red Hat deriv.), `yum` (Red Hat deriv.), `pacman` (Arch deriv.), `apk` (Alpine)
+     * macOS: `brew`
+     * Windows: `choco`, `winget`, `scoop`
 
 ## Usage
 
