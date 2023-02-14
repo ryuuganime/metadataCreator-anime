@@ -82,12 +82,12 @@ Similar to the PowerShell guidelines, with a slight twist, please follow these g
   script_name = os.path.basename(__file__)
 
   # from env, import translation file
-  lang = os.getenv('LANG')
-  with open(f'./Languages/{script_name}/{lang}.json', 'r') as f:
+  lang = os.getenv('LANGUAGE')
+  with open(f'./Languages/{lang}/{script_name}.json', 'r') as f:
   	trl = j.load(f)
 
-  # create a function to get translation string directly from json file
-  def _(string):
+  # create a function to get translation string from json file
+  def _(string: str):
   	return trl[string]
   ```
   <!-- markdownlint-enable MD010 -->
