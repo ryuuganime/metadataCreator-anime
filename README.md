@@ -22,33 +22,60 @@ Another attempt creating an automation of metadata inserter: Anime. Made hybrid 
   * [Why PowerShell?](#why-powershell)
   * [Why hybrid?](#why-hybrid)
 
+<!-- markdownlint-disable MD034 -->
 ## Required 3rd Party Services and Tool
 
-<!-- markdownlint-disable MD034 -->
-| Name               |   Type   | Description                                                            | Link                          |
-| :----------------- | :------: | :--------------------------------------------------------------------- | :---------------------------- |
-| aniDB              | Relation | Get anime relation to current title for ID                             | https://anidb.net             |
-| AniList            | Metadata | Search and retrieve anime metadata                                     | https://anilist.co            |
-| Anime API          | Relation | Search and Retrieve relation to other sites                            | https://nttds.my.id/discord   |
-| Anime-Planet       | Relation | Get anime relation to current title for ID                             | https://anime-planet.com      |
-| aniSearch          | Metadata | Retrieve anime metadata in German, Italian, French, and Spanish        | https://anisearch.com         |
-| Annict (アニクト)  | Metadata | Retrieve anime metadata in Japanese                                    | https://annict.jp             |
-| Fanart.tv          |  Assets  | Retrieve show image assets: poster, background, logo                   | https://fanart.tv             |
-| Kaize              | Relation | Get anime relation to current title for ID                             | https://kaize.io              |
-| Kitsu              | Metadata | Retrieve anime metadata                                                | https://kitsu.io              |
-| Last.fm            |  Music   | Search and retrieve song information used on show's opening and ending | https://last.fm               |
-| LiveChart          | Relation | Get anime relation to current title for ID                             | https://livechart.com         |
-| MyAnimeList        | Metadata | Search and retrieve anime metadata                                     | https://myanimelist.net       |
-| Nautiljon          | Metadata | Retrieve anime metadata in French                                      | https://nautiljon.com         |
-| Notify             | Metadata | Retrieve anime metadata                                                | https://notify.moe            |
-| Otak Otaku         | Metadata | Retrieve anime metadata in Indonesian                                  | https://otakotaku.com         |
-| SilverYasha DB     | Metadata | Retrieve anime metadata in Indonesian                                  | https://db.silveryasha.web.id |
-| SIMKL              | Metadata | Retrieve show metadata                                                 | https://simkl.com             |
-| Spotify            |  Music   | Search and retrieve song information used on show's opening and ending | https://spotify.com           |
-| The Movie Database | Metadata | Retrieve show metadata                                                 | https://www.themoviedb.org    |
-| Trakt              | Metadata | Retrieve show metadata                                                 | https://trakt.tv              |
-| Шикимори           | Metadata | Retrieve anime metadata in Russian                                     | https://shikimori.one         |
-| しょぼいカレンダー | Relation | Get anime relation to current title for ID                             | https://cal.shoboi.jp         |
+### Shows Database
+
+| Name               |   Type   | Description                                 | Link                        | Uses Python? |     Dependency     |
+| :----------------- | :------: | :------------------------------------------ | :-------------------------- | :----------: | :----------------: |
+| aniDB              | Relation | Get anime relation to current title for ID  | https://anidb.net           |              |     Anime API      |
+| AniList            | Metadata | Search and retrieve anime metadata          | https://anilist.co          |              |                    |
+| Anime API          | Relation | Search and Retrieve relation to other sites | https://nttds.my.id/discord |              |                    |
+| Anime-Planet       | Metadata | Retrieve anime metadata                     | https://anime-planet.com    |     Yes      |     Anime API      |
+| aniSearch          | Relation | Get show relation to current title for ID   | https://anisearch.com       |              |     Anime API      |
+| Annict (アニクト)  | Relation | Get show relation to current title for ID   | https://annict.jp           |              |                    |
+| IMDb               | Relation | Get show relation to current title for ID   | https://www.imdb.com        |              |       SIMKL        |
+| Kaize              | Relation | Get anime relation to current title for ID  | https://kaize.io            |     Yes      |     Anime API      |
+| Kitsu              | Metadata | Retrieve anime metadata                     | https://kitsu.io            |     Yes      |     Anime API      |
+| LiveChart          | Relation | Get anime relation to current title for ID  | https://livechart.com       |              |     Anime API      |
+| MyAnimeList        | Metadata | Search and retrieve anime metadata          | https://myanimelist.net     |              |                    |
+| MyShows            | Relation | Get show relation to current title for ID   | https://en.myshows.me       |              |      The TVDB      |
+| Nautiljon          | Relation | Get show relation to current title for ID   | https://nautiljon.com       |     Yes      |                    |
+| Notify             | Relation | Retrieve relation to other sites            | https://notify.moe          |              |     Anime API      |
+| Otak Otaku         | Relation | Get show relation to current title for ID   | https://otakotaku.com       |     Yes      |                    |
+| SIMKL              | Metadata | Retrieve show metadata                      | https://simkl.com           |              |    MyAnimeList     |
+| The Movie Database | Relation | Get show relation to current title for ID   | https://www.themoviedb.org  |              | SIMKL, Notify.moe  |
+| The TVDB           | Relation | Get show relation to current title for ID   | https://thetvdb.com         |              | The Movie Database |
+| Trakt              | Relation | Get show relation to current title for ID   | https://trakt.tv            |              |       SIMKL        |
+| TV Time            | Relation | Get show relation to current title for ID   | https://www.tvtime.com      |              |      The TVDB      |
+| TVMaze             | Relation | Get show relation to current title for ID   | https://tvmaze.com          |              | The Movie Database |
+| TvRage             | Relation | Get show relation to current title for ID   | https://tvrage.com          |              |  TVMaze, MyShows   |
+| Кинопоиск          | Relation | Get show relation to current title for ID   | https://www.kinopoisk.ru    |              |      MyShows       |
+| Шикимори           | Relation | Get show relation to current title for ID   | https://shikimori.one       |              |    MyAnimeList     |
+
+### TV Schedule Database
+
+| Name               |   Type   | Description                                | Link                  | Uses Python? | Dependency |
+| :----------------- | :------: | :----------------------------------------- | :-------------------- | :----------: | :--------: |
+| しょぼいカレンダー | Relation | Get anime relation to current title for ID | https://cal.shoboi.jp |              | Notify.moe |
+
+### Music Database
+
+| Name        | Type  | Description                                                            | Link                    | Uses Python? | Dependency |
+| :---------- | :---: | :--------------------------------------------------------------------- | :---------------------- | :----------: | :--------: |
+| Spotify     | Music | Search and retrieve song information used on show's opening and ending | https://spotify.com     |              |            |
+| Last.fm     | Music | Search and retrieve song information used on show's opening and ending | https://last.fm         |              |            |
+| MusicBrainz | Music | Search and retrieve song information used on show's opening and ending | https://musicbrainz.org |              |            |
+| Discogs     | Music | Search and retrieve song information used on show's opening and ending | https://discogs.com     |              |            |
+
+### Other
+
+| Name           |   Type   | Description                                          | Link                          | Uses Python? |        Dependency         |
+| :------------- | :------: | :--------------------------------------------------- | :---------------------------- | :----------: | :-----------------------: |
+| Fanart.tv      |  Assets  | Retrieve show image assets: poster, background, logo | https://fanart.tv             |              | The Movie DB, IMDb, Trakt |
+| SilverYasha DB | Relation | Get show relation to current title for ID            | https://db.silveryasha.web.id |              |         Anime API         |
+| Wikipedia      | Metadata | Retrieve show metadata                               | https://wikipedia.org         |     Yes      |                           |
 <!-- markdownlint-enable MD034 -->
 
 ## Getting Started
