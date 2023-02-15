@@ -38,7 +38,6 @@ Another attempt creating an automation of metadata inserter: Anime. Made hybrid 
 | IMDb               | Relation | Get show relation to current title for ID   | https://www.imdb.com        |              |       SIMKL        |
 | Kaize              | Relation | Get anime relation to current title for ID  | https://kaize.io            |     Yes      |     Anime API      |
 | Kitsu              | Metadata | Retrieve anime metadata                     | https://kitsu.io            |     Yes      |     Anime API      |
-| LiveChart          | Relation | Get anime relation to current title for ID  | https://livechart.com       |              |     Anime API      |
 | MyAnimeList        | Metadata | Search and retrieve anime metadata          | https://myanimelist.net     |              |                    |
 | MyShows            | Relation | Get show relation to current title for ID   | https://en.myshows.me       |              |      The TVDB      |
 | Nautiljon          | Relation | Get show relation to current title for ID   | https://nautiljon.com       |     Yes      |                    |
@@ -58,6 +57,7 @@ Another attempt creating an automation of metadata inserter: Anime. Made hybrid 
 
 | Name               |   Type   | Description                                | Link                  | Uses Python? | Dependency |
 | :----------------- | :------: | :----------------------------------------- | :-------------------- | :----------: | :--------: |
+| LiveChart          | Relation | Get anime relation to current title for ID | https://livechart.com |              | Anime API  |
 | しょぼいカレンダー | Relation | Get anime relation to current title for ID | https://cal.shoboi.jp |              | Notify.moe |
 
 ### Music Database
