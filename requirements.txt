@@ -1,3 +1,5 @@
-beautifulsoup4==4.11.2
-python-dotenv==0.21.1
-requests==2.28.2
+beautifulsoup4
+mediawiki
+pymediawiki
+python-dotenv
+requests
