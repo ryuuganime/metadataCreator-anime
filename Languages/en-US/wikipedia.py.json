@@ -1,0 +1,10 @@
+{
+  "help_usage": "Usage:",
+  "help_options": "Options:",
+  "help_option_query": "Search query",
+  "help_option_language": "Language of the result",
+  "help_option_help": "Show this help message and exit",
+  "error_no_query": "No query specified",
+  "error_page_not_found": "The page you requested can not be found. Please check your query.",
+  "error_no_argument": "No argument specified, use --help for more information. Exiting"
+}
