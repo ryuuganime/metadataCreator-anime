@@ -51,7 +51,7 @@ def main(argv):
 		raise SystemExit(_('error_no_argument'))
 
 	# if query is not provided, exit
-	if (lets['query'] == None):
+	if (lets['query'] is None):
 		raise SystemExit(_('error_no_query'))
 	else:
 		grab_summary(lets['query'], lets['lang'])
