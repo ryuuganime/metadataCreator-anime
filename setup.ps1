@@ -1,6 +1,10 @@
 ﻿#!/usr/bin/env pwsh
 #Requires -Version 7
 
+# set Write-Information to always show messages
+
+$InformationPreference = 'Continue'
+
 # ==============================================================================
 # FUNCTIONS
 # ==============================================================================
@@ -12,7 +16,7 @@ Function Show-SudoWarning {
 		[string]$Package
 	)
 
-	Write-Host @"
+	Write-Information @"
 `e[31mWARNING: This script will attempt to use sudo to install packages.`e[0m
 If you do not want to use sudo (or gsudo is not installed for Windows), please exit this script and install the following package manually:
 $package
@@ -116,20 +120,20 @@ $binaries | ForEach-Object {
 		# If $_ is python3, check for python
 		If ($_ -eq 'python3') {
 			If (-not (Get-Command 'python' -ErrorAction SilentlyContinue)) {
-				Write-Host "$_ is not installed"
+				Write-Error "$_ is not installed" -ErrorAction Continue
 				Install-PackageFromDistro -Package 'python3'
 			}
 			Else {
-				Write-Host "$_ is already installed"
+				Write-Information "$_ is already installed"
 			}
 		}
 		Else {
-			Write-Host "$_ is not installed"
+			Write-Error "$_ is not installed" -ErrorAction Continue
 			Install-PackageFromDistro -Package $_
 		}
 	}
 	Else {
-		Write-Host "$_ is already installed"
+		Write-Information "$_ is already installed"
 	}
 }
 
@@ -142,17 +146,18 @@ $Modules = @(
 
 $Modules | ForEach-Object {
 	If (-not (Get-Package -Name $_ -ErrorAction SilentlyContinue)) {
-		Write-Host "Installing module $_"
+		Write-Information "Installing module $_"
 		Install-Module -Name $_ -Force
 	}
 	Else {
-		Write-Host "Module $_ is already installed"
+		Write-Information "Module $_ is already installed"
+
 	}
 }
 
 # Run Env Generator before running the rest of the script
 If (-not (Test-Path -Path ".\.env" -ErrorAction SilentlyContinue)) {
-	Write-Host "Generating env.ps1"
+	Write-Information "Generating env.ps1"
 	.\Modules\Generate-Env.ps1
 }
 
