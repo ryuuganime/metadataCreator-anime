@@ -40,6 +40,7 @@ by PowerShell and Python
 | Anime-Planet       | Metadata | Retrieve anime metadata                     | https://anime-planet.com    |     Yes      |     Anime API      |
 | aniSearch          | Relation | Get show relation to current title for ID   | https://anisearch.com       |              |     Anime API      |
 | Annict (アニクト)  | Relation | Get show relation to current title for ID   | https://annict.jp           |              |                    |
+| Bangumi            | Relation | Get anime relation to current title for ID  | https://bgm.tv              |              |                    |
 | IMDb               | Relation | Get show relation to current title for ID   | https://www.imdb.com        |              |       SIMKL        |
 | Kaize              | Relation | Get anime relation to current title for ID  | https://kaize.io            |     Yes      |     Anime API      |
 | Kitsu              | Metadata | Retrieve anime metadata                     | https://kitsu.io            |     Yes      |     Anime API      |
