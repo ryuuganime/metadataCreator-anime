@@ -1,9 +1,15 @@
 ﻿#!/usr/bin/env pwsh
 #Requires -Version 7
 
+[CmdletBinding()]
+Param(
+	[String]$GitHubRepo = "ryuuganime/animeDb"
+)
+
 # set Write-Information to always show messages
 
 $InformationPreference = 'Continue'
+
 
 # ==============================================================================
 # FUNCTIONS
@@ -155,10 +161,12 @@ $Modules | ForEach-Object {
 	}
 }
 
+git clone "https://github.com/${GitHubRepo}.git" '.\Database\animeDb'
+
 # Run Env Generator before running the rest of the script
 If (-not (Test-Path -Path ".\.env" -ErrorAction SilentlyContinue)) {
 	Write-Information "Generating env.ps1"
-	.\Modules\Generate-Env.ps1
+	.\Modules\Set-WorkplaceEnv.ps1
 }
 
 # ==============================================================================
