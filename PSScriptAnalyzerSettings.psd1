@@ -1,6 +1,6 @@
 @{
-	Rules = @{
-		PSUseCompabilityCmdlets = @{
+	Rules        = @{
+		PSUseCompabilityCmdlets    = @{
 			compability = @(
 				'core-7.3.0-windows',
 				'core-7.3.0-linux',
@@ -8,9 +8,9 @@
 			)
 		}
 		PSUseConsistentIndentation = @{
-			Enable = $true
+			Enable              = $true
 			PipelineIndentation = 'IncreaseIndentationForFirstPipeline'
-			Kind = 'tab'
+			Kind                = 'tab'
 		}
 		PSUseConsistentWhitespace  = @{
 			Enable          = $true
@@ -22,7 +22,7 @@
 			CheckSeparator  = $true
 		}
 		PSAlignAssignmentStatement = @{
-			Enable = $true
+			Enable         = $true
 			CheckHashtable = $true
 		}
 	}
@@ -31,5 +31,8 @@
 		"PSAvoidUsingInvokeExpression"
 		# We don't really modify anything on system, verbs only used for clarity
 		"PSUseShouldProcessForStateChangingFunctions"
+		# It broke hash table alignment
+		"PSAlignAssignmentStatement",
+		"PSUseConsistentWhitespace"
 	)
 }
