@@ -1,0 +1,11 @@
+{
+  "description": "Get an anime data from Kitsu using ID",
+  "error_no_argument": "No argument specified, use --help for more information. Exiting",
+  "error_no_id": "No id specified",
+  "error_no_result": "The page you requested can not be found. Please check your query.",
+  "help_description": "Description:",
+  "help_option_help": "Show this help message and exit",
+  "help_option_id": "ID query",
+  "help_options": "Options:",
+  "help_usage": "Usage:"
+}
