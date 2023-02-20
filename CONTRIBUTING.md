@@ -60,6 +60,26 @@ please follow these guidelines:
 * File name should follow Verb-Noun format in PascalCase, e.g: `New-MyFile.ps1`,
   `Get-MyFile.ps1`, except for main resource of this project: `./main.ps1` and
   `./setup.ps1` for quicker access via command line.
+* To use translation, write following code in the beginning of your script:
+
+  <!-- markdownlint-disable MD010 -->
+  ```powershell
+  #!/usr/bin/env pwsh
+  # -*- coding: utf-8 -*-
+
+  # Load .env file and set $lang var
+  Set-PsEnv
+  $lang = $ENV:LANGUAGE
+
+  # Grab this script name
+  $scriptName = $MyInvocation.MyCommand.Name
+
+  $l = Get-Content -Path ".\Languages\${lang}\${scriptName}.json" | ConvertFrom-Json
+  ```
+  <!-- markdownlint-enable MD010 -->
+
+  Then, to translate a string, use `$l.$string` in your script, with `$string`
+  as the key in the json file.
 
 ### Python Guidelines
 
@@ -108,7 +128,8 @@ guidelines when contributing to the Python code:
   ```
   <!-- markdownlint-enable MD010 -->
 
-  Then, to translate a string, use `_('string')` in your script.
+  Then, to translate a string, use `_('string')` in your script, with `string`
+  as the key in the json file.
 
 ### Sources Guidelines
 
