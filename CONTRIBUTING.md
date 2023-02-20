@@ -58,8 +58,19 @@ please follow these guidelines:
 * Always save your files in UTF-8 **with** BOM encoding. This is the default
   encoding for PowerShell files.
 * File name should follow Verb-Noun format in PascalCase, e.g: `New-MyFile.ps1`,
-  `Get-MyFile.ps1`, except for main resource of this project: `./main.ps1` and
-  `./setup.ps1` for quicker access via command line.
+  `Get-MyFile.ps1`, unless the script is a module (`*.psm1`) file to talk to the
+  3rd party API and contains one or more functions, or core script (`*.ps1`)
+  file: `script.ps1` and `setup.ps1`.
+
+  `*.psm1` files does not need to follow Verb-Noun format, but should use
+  PascalCase/camelCase for naming convention instead.
+
+  For example:
+  * `New-MyFile.ps1` - contains `New-MyFile` function, and used locally
+  * `aniDb.psm1` - contains `Get-AniDbData` function, and used to talk to AniDB
+    API
+  * `script.ps1` - contains core script, and used to run the script
+
 * To use translation, write following code in the beginning of your script:
 
   <!-- markdownlint-disable MD010 -->
