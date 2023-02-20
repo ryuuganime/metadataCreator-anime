@@ -1,0 +1,12 @@
+{
+  "error": "An error occurred while processing your request. Please try again later. Error message:",
+  "verbose": {
+    "iwr_req": "Requesting data from {0}...",
+    "parse": "Parsing data...",
+    "get_data": "Getting data...",
+    "get_synonyms": "Getting synonyms...",
+    "link_external": "Linking to external data...",
+    "build_hashtable": "Building hashtable...",
+    "return_data": "Returning data as JSON..."
+  }
+}
