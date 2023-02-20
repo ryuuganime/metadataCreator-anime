@@ -32,56 +32,58 @@ by PowerShell and Python
 
 ### Shows Database
 
-| Name               |   Type   | Description                                 | Link                        | Uses Python? |     Dependency     |
-| :----------------- | :------: | :------------------------------------------ | :-------------------------- | :----------: | :----------------: |
-| aniDB              | Relation | Get anime relation to current title for ID  | https://anidb.net           |              |     Anime API      |
-| AniList            | Metadata | Search and retrieve anime metadata          | https://anilist.co          |              |                    |
-| Anime API          | Relation | Search and Retrieve relation to other sites | https://nttds.my.id/discord |              |                    |
-| Anime-Planet       | Metadata | Retrieve anime metadata                     | https://anime-planet.com    |     Yes      |     Anime API      |
-| aniSearch          | Relation | Get show relation to current title for ID   | https://anisearch.com       |              |     Anime API      |
-| Annict (アニクト)  | Relation | Get show relation to current title for ID   | https://annict.jp           |              |                    |
-| Bangumi            | Relation | Get anime relation to current title for ID  | https://bgm.tv              |              |                    |
-| IMDb               | Relation | Get show relation to current title for ID   | https://www.imdb.com        |              |       SIMKL        |
-| Kaize              | Relation | Get anime relation to current title for ID  | https://kaize.io            |     Yes      |     Anime API      |
-| Kitsu              | Metadata | Retrieve anime metadata                     | https://kitsu.io            |     Yes      |     Anime API      |
-| MyAnimeList        | Metadata | Search and retrieve anime metadata          | https://myanimelist.net     |              |                    |
-| MyShows            | Relation | Get show relation to current title for ID   | https://en.myshows.me       |              |      The TVDB      |
-| Nautiljon          | Relation | Get show relation to current title for ID   | https://nautiljon.com       |     Yes      |                    |
-| Notify             | Relation | Retrieve relation to other sites            | https://notify.moe          |              |     Anime API      |
-| Otak Otaku         | Relation | Get show relation to current title for ID   | https://otakotaku.com       |     Yes      |                    |
-| SIMKL              | Metadata | Retrieve show metadata                      | https://simkl.com           |              |    MyAnimeList     |
-| The Movie Database | Relation | Get show relation to current title for ID   | https://www.themoviedb.org  |              | SIMKL, Notify.moe  |
-| The TVDB           | Relation | Get show relation to current title for ID   | https://thetvdb.com         |              | The Movie Database |
-| Trakt              | Relation | Get show relation to current title for ID   | https://trakt.tv            |              |       SIMKL        |
-| TV Time            | Relation | Get show relation to current title for ID   | https://www.tvtime.com      |              |      The TVDB      |
-| TVMaze             | Relation | Get show relation to current title for ID   | https://tvmaze.com          |              | The Movie Database |
-| TvRage             | Relation | Get show relation to current title for ID   | https://tvrage.com          |              |  TVMaze, MyShows   |
-| Кинопоиск          | Relation | Get show relation to current title for ID   | https://www.kinopoisk.ru    |              |      MyShows       |
-| Шикимори           | Relation | Get show relation to current title for ID   | https://shikimori.one       |              |    MyAnimeList     |
+| Name                       |   Type   | Description                                 | Uses Python? |     Dependency     |
+| :------------------------- | :------: | :------------------------------------------ | :----------: | :----------------: |
+| [aniDB][adb]               | Relation | Get anime relation to current title for ID  |              |     Anime API      |
+| [AniList][al]              | Metadata | Search and retrieve anime metadata          |              |                    |
+| [Anime API][aa]            | Relation | Search and Retrieve relation to other sites |              |                    |
+| [Anime News Network][ann]  | Relation | Get anime relation to current title for ID  |              |       SIMKL        |
+| [Anime-Planet][ap]         | Metadata | Retrieve anime metadata                     |     Yes      |     Anime API      |
+| [aniSearch][as]            | Relation | Get show relation to current title for ID   |              |     Anime API      |
+| [Annict (アニクト)][ant]   | Relation | Get show relation to current title for ID   |              |                    |
+| [Bangumi][bgm]             | Relation | Get anime relation to current title for ID  |              |                    |
+| [IMDb][imdb]               | Relation | Get show relation to current title for ID   |              |       SIMKL        |
+| [Kaize][kz]                | Relation | Get anime relation to current title for ID  |     Yes      |     Anime API      |
+| [Kitsu][kt]                | Metadata | Retrieve anime metadata                     |     Yes      |     Anime API      |
+| [MyAnimeList][mal]         | Metadata | Search and retrieve anime metadata          |              |                    |
+| [MyShows][ms]              | Relation | Get show relation to current title for ID   |              |      The TVDB      |
+| [Nautiljon][nt]            | Relation | Get show relation to current title for ID   |     Yes      |                    |
+| [Notify][ntf]              | Relation | Retrieve relation to other sites            |              |     Anime API      |
+| [Otak Otaku][oo]           | Relation | Get show relation to current title for ID   |     Yes      |                    |
+| [SIMKL][smk]               | Metadata | Retrieve show metadata                      |              |    MyAnimeList     |
+| [The Movie Database][tmdb] | Relation | Get show relation to current title for ID   |              | SIMKL, Notify.moe  |
+| [The TVDB][tvdb]           | Relation | Get show relation to current title for ID   |              | The Movie Database |
+| [Trakt][tr]                | Relation | Get show relation to current title for ID   |              |       SIMKL        |
+| [TV Time][time]            | Relation | Get show relation to current title for ID   |              |      The TVDB      |
+| [TVMaze][maze]             | Relation | Get show relation to current title for ID   |              | The Movie Database |
+| [TvRage][rage]             | Relation | Get show relation to current title for ID   |              |  TVMaze, MyShows   |
+| [Кинопоиск][kno]           | Relation | Get show relation to current title for ID   |              |      MyShows       |
+| [Шикимори][shk]            | Relation | Get show relation to current title for ID   |              |    MyAnimeList     |
 
 ### TV Schedule Database
 
-| Name               |   Type   | Description                                | Link                  | Uses Python? | Dependency |
-| :----------------- | :------: | :----------------------------------------- | :-------------------- | :----------: | :--------: |
-| LiveChart          | Relation | Get anime relation to current title for ID | https://livechart.com |              | Anime API  |
-| しょぼいカレンダー | Relation | Get anime relation to current title for ID | https://cal.shoboi.jp |              | Notify.moe |
+| Name                      |   Type   | Description                                | Uses Python? | Dependency |
+| :------------------------ | :------: | :----------------------------------------- | :----------: | :--------: |
+| [LiveChart][lc]           | Relation | Get anime relation to current title for ID |              | Anime API  |
+| [しょぼいカレンダー][shb] | Relation | Get anime relation to current title for ID |              | Notify.moe |
 
 ### Music Database
 
-| Name        | Type  | Description                                                            | Link                    | Uses Python? | Dependency |
-| :---------- | :---: | :--------------------------------------------------------------------- | :---------------------- | :----------: | :--------: |
-| Spotify     | Music | Search and retrieve song information used on show's opening and ending | https://spotify.com     |              |            |
-| Last.fm     | Music | Search and retrieve song information used on show's opening and ending | https://last.fm         |              |            |
-| MusicBrainz | Music | Search and retrieve song information used on show's opening and ending | https://musicbrainz.org |              |            |
-| Discogs     | Music | Search and retrieve song information used on show's opening and ending | https://discogs.com     |              |            |
+| Name               |   Type   | Description                                                            | Uses Python? |      Dependency      |
+| :----------------- | :------: | :--------------------------------------------------------------------- | :----------: | :------------------: |
+| [Apple Music][am]  | Relation | Retrieve song ID by looking up ISRC code attached on another site      |              | Spotify, MusicBrainz |
+| [Spotify][sp]      |  Music   | Search and retrieve song information used on show's opening and ending |              |                      |
+| [Last.fm][lfm]     |  Music   | Search and retrieve song information used on show's opening and ending |              |                      |
+| [MusicBrainz][mbz] |  Music   | Search and retrieve song information used on show's opening and ending |              |                      |
+| [Discogs][dcs]     |  Music   | Search and retrieve song information used on show's opening and ending |              |                      |
 
 ### Other
 
-| Name           |   Type   | Description                                          | Link                          | Uses Python? |        Dependency         |
-| :------------- | :------: | :--------------------------------------------------- | :---------------------------- | :----------: | :-----------------------: |
-| Fanart.tv      |  Assets  | Retrieve show image assets: poster, background, logo | https://fanart.tv             |              | The Movie DB, IMDb, Trakt |
-| SilverYasha DB | Relation | Get show relation to current title for ID            | https://db.silveryasha.web.id |              |         Anime API         |
-| Wikipedia      | Metadata | Retrieve show metadata                               | https://wikipedia.org         |     Yes      |                           |
+| Name                   |   Type   | Description                                          | Uses Python? |             Dependency              |
+| :--------------------- | :------: | :--------------------------------------------------- | :----------: | :---------------------------------: |
+| [Fanart.tv][fan]       |  Assets  | Retrieve show image assets: poster, background, logo |              | The Movie DB, IMDb, Trakt, The TVDB |
+| [SilverYasha DB][sydb] | Relation | Get show relation to current title for ID            |              |              Anime API              |
+| [Wikipedia][wi]        | Metadata | Retrieve show metadata                               |     Yes      |                                     |
 <!-- markdownlint-enable MD034 MD013 -->
 
 ## Getting Started
@@ -158,6 +160,41 @@ the rest of the task.
 > language of choice.
 
 <!-- Links -->
+[aa]: https://nttds.my.id/discord
+[adb]: https://anidb.net
+[al]: https://anilist.co
+[am]: https://music.apple.com
+[ann]: https://animenewsnetwork.com
+[ant]: https://en.annict.com
+[ap]: https://anime-planet.com
+[as]: https://anisearch.com
+[bgm]: https://bgm.tv
+[dcs]: https://discogs.com
+[fan]: https://fanart.tv
+[imdb]: https://www.imdb.com
 [iwr]: https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-7.3
+[kno]: https://www.kinopoisk.ru
+[kt]: https://kitsu.io
+[kz]: https://kaize.io
+[lc]: https://livechart.com
+[lfm]: https://last.fm
+[mal]: https://myanimelist.net
+[maze]: https://tvmaze.com
+[mbz]: https://musicbrainz.org
+[ms]: https://en.myshows.me
+[nt]: https://nautiljon.com
+[ntf]: https://notify.moe
+[oo]: https://otakotaku.com
 [pscore]: https://github.com/PowerShell/PowerShell/releases
 [python]: https://www.python.org/downloads/
+[rage]: https://tvrage.com
+[shb]: https://cal.shoboi.jp
+[shk]: https://shikimori.one
+[smk]: https://simkl.com
+[sp]: https://spotify.com
+[sydb]: https://db.silveryasha.web.id
+[time]: https://www.tvtime.com
+[tmdb]: https://www.themoviedb.org
+[tr]: https://trakt.tv
+[tvdb]: https://thetvdb.com
+[wi]: https://wikipedia.org
