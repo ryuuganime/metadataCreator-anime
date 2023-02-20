@@ -1,5 +1,5 @@
 beautifulsoup4
-mediawiki
+kitsupy
 pymediawiki
 python-dotenv
 requests
