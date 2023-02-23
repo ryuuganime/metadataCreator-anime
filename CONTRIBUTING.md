@@ -119,7 +119,6 @@ guidelines when contributing to the Python code:
   # -*- coding: utf-8 -*-
   import os
   import json as j
-  import requests as r
   from dotenv import load_dotenv as lenv
 
   # Load .env file
